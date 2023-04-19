@@ -12,5 +12,7 @@ jobs:
       - run: echo "🎯 environment is `${{ github.event.inputs.environment }}`."
       - run: echo "📖 log level is `${{ github.event.inputs.logLevel }}`."
       - run: echo "➿ Run the matrix? `${{ github.event.inputs.run_matrix }}`."
-      - run: echo "Something has failed"
-        if: failed()
+      - name: My step
+        if: failure()
+        run: echo "Something has failed"
+        
